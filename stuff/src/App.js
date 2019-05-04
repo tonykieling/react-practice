@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default class App extends Component {
+
+  constructor(){
+    super()
+    this.state = {
+      message: ".",
+      count: 0,
+      onAndOff: false
+    }
+  }
+
+  changeMsg = () => {
+    console.log(this.state.onAndOff + " - " + this.state.count);
+    this.setState(prevState => ({
+      message: "new message",
+      count: this.state.count + 1,
+      onAndOff: !prevState.onAndOff
+    }));
+  }
+
+  render() {
+    return (
+      <div>
+        <h1> { this.state.message } </h1>
+        <h2> { this.state.count } </h2>
+        <h3> { this.state.onAndOff.toString() } </h3>
+        <button onClick={this.changeMsg}>Do Something</button>
+      </div>
+    )
+  }
 }
-
-export default App;
