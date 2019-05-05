@@ -41,7 +41,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <>
         <h1> {this.state.message} {this.state.count} </h1>
         <h3> {this.state.onAndOff.toString()} </h3>
         <button onClick={this.changeMsg}>Do Something</button>
@@ -52,7 +52,7 @@ export default class App extends Component {
           </label>
           <button>Submit</button>
         </form>
-      </div>
+      </>
     )
   }
 }
