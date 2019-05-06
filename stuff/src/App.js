@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
+import FormY from './FormY.js';
 
 export default class App extends Component {
 
   state = {
       message: "",
       count: 0,
-      onAndOff: false
+      onAndOff: false,
+      user: "Bob"
     }
 
-    componentDidMount() {
-      console.log("componentDidMount");
-    }
+    // componentDidMount() {
+    //   console.log("componentDidMount");
+    // }
   
-    componentDidUpdate() {
-      console.log("componentDidUpdate");
-    }
+    // componentDidUpdate() {
+    //   console.log("componentDidUpdate");
+    // }
 
-  changeMsg = () => {
-    console.log(this.state.onAndOff + " - " + this.state.count);
+  changeMsg = (e) => {
+    // console.log(this.state.onAndOff + " - " + this.state.count);
+    console.log("e: ", e.target)
     this.setState({
       message: "new message",
       count: this.state.count + 1,
@@ -26,6 +29,7 @@ export default class App extends Component {
   }
 
   handleChange = e => {
+    console.log("e.target.value: ", e.target.value);
     this.setState({
       message: e.target.value
     });
@@ -37,6 +41,14 @@ export default class App extends Component {
       count: prevState.count + 1
     }));
     console.log("handleSubmit " + this.state.count);
+  }
+
+  checkUser = (user) => {
+    if (user.toLowerCase() === this.state.user.toLowerCase())
+      return true;
+    
+    return false;
+
   }
 
   render() {
@@ -52,6 +64,8 @@ export default class App extends Component {
           </label>
           <button>Submit</button>
         </form>
+
+        <FormY checkUser={this.checkUser}/>
       </>
     )
   }
