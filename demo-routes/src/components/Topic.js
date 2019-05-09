@@ -8,7 +8,7 @@ export default class Topic extends Component {
     // console.log("props: ", this.props)
     return (
       <div>
-            <h3>Requested Param (gues what? new!): {this.props.match.params.id}</h3>
+            <h3>Requested Param: (gues what? new!) {this.props.match.params.id}</h3>
       </div>
     )
   }
