@@ -4,6 +4,7 @@ import Home from './components/Home.js'
 import About from './components/About.js'
 import Topics from './components/Topics.js'
 import Header from './components/Header.js'
+import FormX from './components/FormX.js'
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/topics" component={Topics} />
-
+        <Route path="/form" component={FormX} />
       </div>
     </Router>
   );
