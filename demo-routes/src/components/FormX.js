@@ -79,6 +79,14 @@ class FormX extends React.Component {
     }
   }
 
+  componentDidMount() {
+    const { value } = this.props
+    this.setState({
+      showModal: value
+    })
+    console.log("modalOn: ", value)
+  }
+
   render() {
     return (
       <div className="moldura">

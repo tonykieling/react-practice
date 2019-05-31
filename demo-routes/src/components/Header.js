@@ -14,12 +14,13 @@ export default function Header() {
         <Link to="/topics">Topics</Link>
       </li>
       <li>
-        <Link to={{
+        {/* <Link to={{
           pathname: "/form",
           state: {
             modalOn: true
           }
-        }}>
+        }}> */}
+        <Link to="/form">
           Form
         </Link>
       </li>
