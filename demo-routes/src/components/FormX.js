@@ -31,6 +31,7 @@ class FormX extends React.Component {
     super(props)
     this.state = {
       showModal: true,
+      showAlertModal: false,
       name: "",
       password: ""
     }
@@ -41,6 +42,12 @@ class FormX extends React.Component {
   //     showModal: true
   //   })
   // }
+
+  handleAlertModal = () => {
+    this.setState({
+      showAlertModal: false
+    })
+  }
 
   handleCloseModal = () => {
     this.setState({
@@ -68,7 +75,11 @@ class FormX extends React.Component {
         name: "",
         password: ""
       })
-      alert("name/password are incorrect")
+      // alert("name/password are incorrect")
+      this.setState({
+        showAlertModal: true
+        // showModal: false
+      })
       // this.textInput.focus()
       this.inputRef.focus()
       return false
@@ -77,20 +88,17 @@ class FormX extends React.Component {
 
   customStyles = {
     content: {
-      left: "50%",
-      width: 200
+      width: "100%",
+      height: "100%",
+      left: "0",
+      top: "0"
     }
   }
-
-  // componentDidMount() {
-  //   this.setState({
-  //     showModal: this.props.value
-  //   })
-  // }
 
   render() {
     return (
       <div className="moldura">
+
       <ReactModal
         isOpen = {this.state.showModal}
         style = {customStyles}
@@ -101,8 +109,7 @@ class FormX extends React.Component {
               <Form.Group controlId="formBasicEmail">
                   <Form.Label>User / Email address</Form.Label>
                   <Form.Control
-                      autoFocus
-                      // ref={this.textInput}
+                      // autoFocus
                       ref={(input) => { this.inputRef = input }}
                       type="name"
                       placeholder="Type the user's name"
@@ -134,6 +141,18 @@ class FormX extends React.Component {
               </Button>
           </Form>
       </ReactModal>
+
+      <ReactModal
+        isOpen = {this.state.showAlertModal}
+        style = {this.customStyles}
+      >
+        <h1>Behhhhh</h1>
+        <h3>Wrong</h3>
+              <Button variant="danger" onClick={this.handleAlertModal}>
+                Close Modal
+              </Button>
+      </ReactModal>
+
     </div>
     );
   }
