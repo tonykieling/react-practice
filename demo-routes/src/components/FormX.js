@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal'
 import {Button, Form} from 'react-bootstrap'
-// import './App.css';
-// import { Redirect } from 'react-router-dom'
 
 ReactModal.setAppElement('#root');
 
@@ -37,12 +35,6 @@ class FormX extends React.Component {
     }
   }
 
-  // handleOpenModal = () => {
-  //   this.setState({
-  //     showModal: true
-  //   })
-  // }
-
   handleAlertModal = () => {
     this.setState({
       showAlertModal: false
@@ -66,7 +58,8 @@ class FormX extends React.Component {
     e.preventDefault()
     if (this.state.name === user.name && this.state.password === user.password){
       this.setState({
-        showModal: false
+        showModal: false,
+        showAlertModal: false
       })
       this.props.history.push("/")
       return true
@@ -75,12 +68,9 @@ class FormX extends React.Component {
         name: "",
         password: ""
       })
-      // alert("name/password are incorrect")
       this.setState({
         showAlertModal: true
-        // showModal: false
       })
-      // this.textInput.focus()
       this.inputRef.focus()
       return false
     }
