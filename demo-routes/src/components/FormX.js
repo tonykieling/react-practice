@@ -55,17 +55,16 @@ class FormX extends React.Component {
   }
 
   handleSubmit = (e) => {
-    // e.preventDefault()
+    e.preventDefault()
     console.log("handlesubmit")
     if (this.state.name === user.name && this.state.password === user.password){
       this.setState({
         showModal: false
       })
       console.log("submit was ok")
-      // <Redirect to="/"/>
-      // return true
+      this.props.history.push("/")
+      return true
     } else {
-      // alert("name/password are incorrect")
       this.setState({
         name: "",
         password: ""
