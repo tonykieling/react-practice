@@ -99,7 +99,7 @@ class FormX extends React.Component {
               <Form.Group controlId="formBasicEmail">
                   <Form.Label>User / Email address</Form.Label>
                   <Form.Control
-                      // autoFocus
+                      autoFocus
                       ref={(input) => { this.inputRef = input }}
                       type="name"
                       placeholder="Type the user's name"
@@ -107,9 +107,6 @@ class FormX extends React.Component {
                       onChange={this.handleChange}
                       value={this.state.name}
                   />
-                  <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                  </Form.Text>
               </Form.Group>
 
               <Form.Group controlId="formBasicPassword">

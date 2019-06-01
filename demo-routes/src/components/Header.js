@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <ul>
       <li>
-        <Link to="/" className="linkasd" >Home</Link>
+        <Link to="/" > Home</Link>
       </li>
       <li>
         <Link to="/about">About</Link>
