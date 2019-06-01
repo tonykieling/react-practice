@@ -133,24 +133,24 @@ class FormX extends React.Component {
                   />
               </Form.Group>
 
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" size="lg">
                 Submit
               </Button>
-              <Button variant="danger" onClick={this.handleCloseModal}>
-                Close Modal
+              <Button variant="danger" onClick={this.handleCloseModal} size="lg">
+                Close
               </Button>
           </Form>
       </ReactModal>
 
       <ReactModal
         isOpen = {this.state.showAlertModal}
-        style = {this.customStyles}
+        style = {customStyles}
       >
-        <h1>Behhhhh</h1>
-        <h3>Wrong</h3>
-              <Button variant="danger" onClick={this.handleAlertModal}>
-                Close Modal
-              </Button>
+        <h3>Error!</h3>
+        <h4>name/password wrong</h4>
+          <Button variant="warning" onClick={this.handleAlertModal} size="lg" block>
+            Ok
+          </Button>
       </ReactModal>
 
     </div>
