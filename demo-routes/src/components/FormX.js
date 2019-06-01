@@ -36,16 +36,17 @@ class FormX extends React.Component {
     }
   }
 
-  handleOpenModal = () => {
-    this.setState({
-      showModal: true
-    })
-  }
+  // handleOpenModal = () => {
+  //   this.setState({
+  //     showModal: true
+  //   })
+  // }
 
   handleCloseModal = () => {
     this.setState({
       showModal: false
     })
+    this.props.history.push("/")
   }
 
   handleChange = (e) => {
