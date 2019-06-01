@@ -16,9 +16,10 @@ function App() {
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/topics" component={Topics} />
-        <Route path="/form" exact render = {(props) => (
+        <Route exact path="/form" component={FormX} />
+        {/* <Route path="/form" exact render = {(props) => (
           <FormX {...props} value={true} />
-        )} />
+        )} /> */}
       </div>
     </Router>
   );

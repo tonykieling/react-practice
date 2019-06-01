@@ -1,8 +1,8 @@
 import React from 'react';
-// import './App.css';
 import ReactModal from 'react-modal'
 import {Button, Form} from 'react-bootstrap'
-import { Redirect } from 'react-router-dom'
+// import './App.css';
+// import { Redirect } from 'react-router-dom'
 
 ReactModal.setAppElement('#root');
 
@@ -30,7 +30,7 @@ class FormX extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      showModal: false,
+      showModal: true,
       name: "",
       password: ""
     }
@@ -81,11 +81,11 @@ class FormX extends React.Component {
     }
   }
 
-  componentDidMount() {
-    this.setState({
-      showModal: this.props.value
-    })
-  }
+  // componentDidMount() {
+  //   this.setState({
+  //     showModal: this.props.value
+  //   })
+  // }
 
   render() {
     return (
