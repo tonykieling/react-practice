@@ -2,6 +2,7 @@ import React from 'react';
 // import './App.css';
 import ReactModal from 'react-modal'
 import {Button, Form} from 'react-bootstrap'
+import { Redirect } from 'react-router-dom'
 
 ReactModal.setAppElement('#root');
 
@@ -60,7 +61,9 @@ class FormX extends React.Component {
       this.setState({
         showModal: false
       })
-      return true
+      console.log("submit was ok")
+      // <Redirect to="/"/>
+      // return true
     } else {
       // alert("name/password are incorrect")
       this.setState({
@@ -80,11 +83,9 @@ class FormX extends React.Component {
   }
 
   componentDidMount() {
-    const { value } = this.props
     this.setState({
-      showModal: value
+      showModal: this.props.value
     })
-    console.log("modalOn: ", value)
   }
 
   render() {
@@ -93,7 +94,6 @@ class FormX extends React.Component {
       <ReactModal
         isOpen = {this.state.showModal}
         style = {customStyles}
-        // contentLabel = {"react model test"}
       >
         <h1>Modal</h1>
         <h3>Form</h3>
