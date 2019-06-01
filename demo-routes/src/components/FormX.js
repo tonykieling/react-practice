@@ -57,12 +57,10 @@ class FormX extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log("handlesubmit")
     if (this.state.name === user.name && this.state.password === user.password){
       this.setState({
         showModal: false
       })
-      console.log("submit was ok")
       this.props.history.push("/")
       return true
     } else {
@@ -71,6 +69,8 @@ class FormX extends React.Component {
         password: ""
       })
       alert("name/password are incorrect")
+      // this.textInput.focus()
+      this.inputRef.focus()
       return false
     }
   }
@@ -101,6 +101,9 @@ class FormX extends React.Component {
               <Form.Group controlId="formBasicEmail">
                   <Form.Label>User / Email address</Form.Label>
                   <Form.Control
+                      autoFocus
+                      // ref={this.textInput}
+                      ref={(input) => { this.inputRef = input }}
                       type="name"
                       placeholder="Type the user's name"
                       name="name"
