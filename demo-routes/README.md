@@ -1,6 +1,8 @@
 This is a practice of doing
 - react  
-- react-router  
+- react-router 
+  - Switch  
+  - error  
 - react-modal  
 - react-bootstrap  
   - Form  
