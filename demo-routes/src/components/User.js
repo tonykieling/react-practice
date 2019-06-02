@@ -11,6 +11,7 @@ class User extends Component {
           `${user} is connected` :
           "no user connected"
         }
+
       </div>
     )
   }
