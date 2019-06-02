@@ -2,13 +2,17 @@ import { createStore } from 'redux'
 import reducer from './reducer.js'
 import { getState, saveState } from './localStorage.js'
 
+const persistedData = getState()
+console.log("persistedData: ", persistedData)
+
 const store = createStore(
     reducer,
-    null
+    persistedData
   )
 
 store.subscribe(() => {
-  const user = JSON.stringify(store.getState().user)
+  const user = JSON.stringify(store.getState())
+console.log("user:: ", user)  
   saveState({"user": user})
   console.log("subscribe is working")
 })

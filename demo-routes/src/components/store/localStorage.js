@@ -11,9 +11,9 @@ export const getState = () => {
   }
 }
 
-export const saveState = ({ state }) => {
+export const saveState = ({ user }) => {
   try {
-    localStorage.setItem('user', state)
+    localStorage.setItem('user', user)
   } catch (err) {
     return err.message
   }
