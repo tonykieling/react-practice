@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import User from './User.js'
 
 export default function Header() {
   return (
@@ -24,7 +25,9 @@ export default function Header() {
           Form
         </Link>
       </li>
-      
+      <h4 className="userConnected">
+        <User />        
+      </h4>
     </ul>
   );
 }

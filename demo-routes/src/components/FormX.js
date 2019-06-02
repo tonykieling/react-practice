@@ -63,7 +63,7 @@ class FormX extends React.Component {
         showAlertModal: false
       })
       console.log("bob is logged")
-      this.props.setUser()
+      this.props.setUser(user.name)
       this.props.history.push("/")
       return true
     } else {
@@ -150,7 +150,7 @@ class FormX extends React.Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setUser: () => dispatch({type:"SET_USER", data: "BOB hard coded"}),
+    setUser: (user) => dispatch({type:"SET_USER", data: user}),
     noUser: () => dispatch({type:"NO_USER", data: ""})
   }
 }
