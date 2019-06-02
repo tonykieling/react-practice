@@ -61,6 +61,7 @@ class FormX extends React.Component {
         showModal: false,
         showAlertModal: false
       })
+      console.log("bob is logged")
       this.props.history.push("/")
       return true
     } else {
