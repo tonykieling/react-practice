@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactModal from 'react-modal'
 import {Button, Form} from 'react-bootstrap'
+import { connect } from 'react-redux'
 
 ReactModal.setAppElement('#root');
 
@@ -62,6 +63,7 @@ class FormX extends React.Component {
         showAlertModal: false
       })
       console.log("bob is logged")
+      this.props.setUser()
       this.props.history.push("/")
       return true
     } else {
@@ -146,4 +148,11 @@ class FormX extends React.Component {
   }
 }
 
-export default FormX;
+const mapDispatchToProps = dispatch => {
+  return {
+    setUser: () => dispatch({type:"SET_USER", data: "BOB hard coded"}),
+    noUser: () => dispatch({type:"NO_USER", data: ""})
+  }
+}
+
+export default connect(null, mapDispatchToProps)(FormX);
