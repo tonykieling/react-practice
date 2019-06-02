@@ -8,3 +8,5 @@ This is a practice of doing
   - Form  
   - Button  
   - focus  
+- react-redux  
+- persisting data - localStorage  
