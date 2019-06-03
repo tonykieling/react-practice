@@ -13,7 +13,7 @@ const store = createStore(
 store.subscribe(() => {
   const user = JSON.stringify(store.getState())
 console.log("user:: ", user)  
-  saveState({"user": user})
+  saveState(user)
   console.log("subscribe is working")
 })
 

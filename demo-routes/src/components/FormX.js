@@ -64,7 +64,8 @@ class FormX extends React.Component {
       })
       console.log("bob is logged")
       this.props.setUser(user.name)
-      this.props.history.push("/")
+      console.log("this.props.history: ", this.props.history)
+      this.props.history.push("/about")
       return true
     } else {
       this.setState({

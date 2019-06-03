@@ -3,6 +3,7 @@
 export const getState = () => {
   try {
     const serializedState = localStorage.getItem('user')
+console.log("serializedState: ", serializedState)    
     if (!serializedState)
       return undefined
     return JSON.parse(serializedState)
@@ -11,7 +12,8 @@ export const getState = () => {
   }
 }
 
-export const saveState = ({ user }) => {
+export const saveState = (user) => {
+  console.log("user on saveState: ", user)
   try {
     localStorage.setItem('user', user)
   } catch (err) {
