@@ -13,6 +13,8 @@ const reducer = (state = initialState, action) => {
     case("NO_USER"):
       newState.user = action.data
       break
+    default:
+      break
   }
 
   return newState
