@@ -20,3 +20,7 @@ export const saveState = (user) => {
     return err.message
   }
 }
+
+export const noUser = () => {
+  localStorage.removeItem('user')
+}
