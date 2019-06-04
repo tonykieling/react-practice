@@ -1,9 +1,10 @@
+import { noUser } from './localStorage.js'
 const initialState = {
   user: null
 }
 
 const reducer = (state = initialState, action) => {
-  console.log("inside reducer")
+  // console.log("inside reducer")
   const newState = {...state}
   switch(action.type) {
     case("SET_USER"):
@@ -11,7 +12,8 @@ const reducer = (state = initialState, action) => {
       console.log("newState: ", JSON.stringify(newState))
       break
     case("NO_USER"):
-      newState.user = action.data
+      newState.user = undefined
+      noUser()
       break
     default:
       break
