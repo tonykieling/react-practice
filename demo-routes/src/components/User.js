@@ -2,9 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class User extends Component {
-
   userLogged = (user) => {
-    console.log("inside userlogged: ", user)
     return(
       <div>
         {user} is logged
@@ -16,7 +14,7 @@ class User extends Component {
       </div>
     )
   }
-
+  
   noUserLogged = () => {
     return(
       <div>
@@ -26,6 +24,7 @@ class User extends Component {
   }
   
   render () {
+    console.log("props.history: ", this.props.history)
     console.log("user: ", this.props.user)
     const user = this.props.user
     return (
